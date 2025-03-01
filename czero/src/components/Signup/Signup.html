@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./signup.css">
+	
+	<title>Login & Registration</title>
+	<style>
+		
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!----------------------------- Form box ----------------------------------->
+		<div class="form-box">
+			<!------------------- login form -------------------------->
+			<div class="login-container" id="login">
+				<div class="top">
+					<span>Don't have an account?
+						<a href="#" id="sign-up-js">Sign Up</a></span>
+					<header>Login</header>
+				</div>
+				<form action="">
+					<div class="input-box">
+						<input type="email" class="input-field input-field__email" placeholder="Email" />
+						<i class="bx bx-user"></i>
+					</div>
+					<div class="input-box">
+						<input type="text" class="input-field input-field__password" placeholder="Password" />
+						<i class="bx bx-lock-alt"></i>
+					</div>
+					<div class="input-box input-box__submit">
+						<input type="submit" class="submit" value="Sign In"/>
+						<div class="loader-container" id="login-loader">
+							<div class="loader"></div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!------------------- registration form -------------------------->
+			<div class="register-container" id="register">
+				<div class="top">
+					<span>Have an account? <a href="#" id="login-js">Login</a></span>
+					<header>Sign Up</header>
+				</div>
+				<form action="">
+					<div class="two-forms">
+						<div class="input-box">
+							<input type="text" class="input-field input-filed__firstname" placeholder="Firstname" />
+							<i class="bx bx-user"></i>
+						</div>
+						<div class="input-box">
+							<input type="text" class="input-field input-filed__lastname" placeholder="Lastname" />
+							<i class="bx bx-user"></i>
+						</div>
+					</div>
+					<div class="input-box">
+						<input type="email" class="input-field input-filed__email" placeholder="Email" />
+						<i class="bx bx-envelope"></i>
+					</div>
+					<div class="input-box">
+						<input type="text" class="input-field input-filed__password" placeholder="Password" />
+						<i class="bx bx-lock-alt"></i>
+					</div>
+					<div class="input-box input-box__submit">
+						<input type="submit" class="submit" value="Register">
+						<div class="loader-container" id="register-loader">
+							<div class="loader"></div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const signUpJs = document.querySelector("#sign-up-js");
+		const loginJs = document.querySelector("#login-js");
+		const loginLoader = document.getElementById("login-loader");
+		const registerLoader = document.getElementById("register-loader");
+		var x = document.getElementById("login");
+		var y = document.getElementById("register");
+
+		loginJs.addEventListener("click", function () {
+			login();
+		});
+		signUpJs.addEventListener("click", register);
+
+		function login() {
+			x.style.left = "4px";
+			y.style.right = "-520px";
+			x.style.opacity = 1;
+			y.style.opacity = 0;
+		}
+		function register() {
+			x.style.left = "-510px";
+			y.style.right = "5px";
+			x.style.opacity = 0;
+			y.style.opacity = 1;
+		}
+
+		const dataBaseUrl = "https://userdatabase-1.onrender.com";
+
+		document
+			.querySelector("#register form")
+			.addEventListener("submit", function (e) {
+				e.preventDefault();
+
+				const firstName = document
+					.querySelector(".input-filed__firstname")
+					.value.trim();
+				const lastName = document
+					.querySelector(".input-filed__lastname")
+					.value.trim();
+				const email = document
+					.querySelector(".input-filed__email")
+					.value.trim();
+				const password = document
+					.querySelector(".input-filed__password")
+					.value.trim();
+
+				// Input validation
+				if (!firstName || !lastName || !email || !password) {
+					alert("Please fill out all fields before submitting");
+					return; // Exit the function if validation fails
+				}
+
+				// Show loader
+				registerLoader.style.display = "flex";
+
+				// Check if the email already exists in the database
+				fetch(`${dataBaseUrl}/users?email=${email}`)
+					.then((response) => response.json())
+					.then((users) => {
+						if (users.length > 0) {
+							// If a user with this email already exists, alert the user
+							alert(
+								"User with this email already exists. Please try with a different email."
+							);
+						} else {
+							// Proceed with registration if the email is not taken
+							registerUser(firstName, lastName, email, password);
+						}
+					})
+					.catch((error) => {
+						console.error("Error:", error);
+						alert(
+							"An error occurred while checking email availability. Please try again later."
+						);
+					})
+					.finally(() => {
+						// Hide loader
+						registerLoader.style.display = "none";
+					});
+			});
+
+		// Function to register the user
+		function registerUser(firstName, lastName, email, password) {
+			fetch(`${dataBaseUrl}/users`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					firstname: firstName,
+					lastname: lastName,
+					email: email,
+					password: password,
+				}),
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					alert("User registered successfully");
+					document.querySelector("#register form").reset(); // Reset the form after successful submission
+				})
+				.catch((error) => {
+					console.error("Error:", error);
+					alert(
+						"An error occurred while registering the user. Please try again later."
+					);
+				})
+				.finally(() => {
+					// Hide loader
+					registerLoader.style.display = "none";
+				});
+		}
+
+		document
+			.querySelector("#login form")
+			.addEventListener("submit", function (e) {
+				e.preventDefault();
+
+				const emailField = document.querySelector(".input-field__email");
+				const passwordField = document.querySelector(
+					".input-field__password"
+				);
+
+				const email = emailField.value.trim();
+				const password = passwordField.value.trim();
+
+				// Input validation: Check if both email and password fields are filled
+				if (!email || !password) {
+					alert("Please enter both email and password");
+					return;
+				}
+
+				// Show loader
+				loginLoader.style.display = "flex";
+
+				// Proceed with login if inputs are valid
+				fetch(`${dataBaseUrl}/users?email=${email}&password=${password}`)
+					.then((response) => response.json())
+					.then((data) => {
+						if (data.length > 0) {
+							alert("Login successful");
+							document.querySelector("#login form").reset();
+
+							window.location.href = "https://iridescent-malabi-bf00a8.netlify.app/"; // Change '/home' to the desired URL
+						} else {
+							alert("Invalid email or password");
+						}
+					})
+					.catch((error) => {
+						console.error("Error:", error);
+					})
+					.finally(() => {
+						// Hide loader
+						loginLoader.style.display = "none";
+					});
+			});
+	</script>
+	<script src="Signup.js"></script>
+
+</body>
+
+</html>
