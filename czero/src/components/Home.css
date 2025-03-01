@@ -4,15 +4,26 @@
     font-style: normal;
     margin: none;
     padding: none;
-    background-image: url('bg.png') contain no-repeat;
+    /* background-image: url('bg.png'); */
 }
 
 
 header {
-    background-color: #157145;
+    /* background-color: #157145; */
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+.cards {
+    background-color: grey;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    height: 20rem;
+    width: 15rem;
 }
 
 footer {
@@ -20,7 +31,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: bottom;
     bottom: 0;
     width: 100%;
 }
