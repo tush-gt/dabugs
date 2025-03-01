@@ -5,7 +5,7 @@ function Home()
     return <>
     <div class="navbar">
         <div class="left-nav">
-            <img src="logo.png" alt="logo" />
+            <img src="main.png" alt="logo" />
             <h1>CarbonZero</h1>
         </div>
         <div class="right-nav">
