@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     background-color: #061826;
     color: #157141;
     margin: 0;
@@ -17,6 +17,7 @@ body {
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
+    margin-left: 5rem;
 }
 
 .card-container {
@@ -27,7 +28,21 @@ h1 {
     margin-top: 20px;
 }
 
-.card {
+.calc-cards {
+    background-color: #38536a;
+    margin-left: 14rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* margin-left: 13rem; */
+    height: 50rem;
+    width: 50rem;
+    box-shadow: 0 0 15px rgba(148, 178, 162, 0.8);
+}
+
+.calc-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +58,7 @@ h1 {
     
 }
 
-.card:hover {
+.calc-card:hover {
     transform: scale(1.05);
     cursor: pointer;
 }
@@ -97,7 +112,7 @@ input {
     transition: 0.3s ease-in-out;
     text-align: center;
     width: 50rem;
-    margin: auto;
+    margin-left: 14rem;
     font-family: Arial, sans-serif;
     position: relative;
 }
@@ -138,4 +153,14 @@ input {
 .carbon-footprint a:hover {
     text-decoration: underline;
     color: #1ec99b;
+}
+
+.results{
+    background-color: #157145;
+    color: #061826;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin: auto;
+    margin-left: 14rem;
 }
