@@ -1,9 +1,13 @@
 body {
     font-family: "Josefin Sans", sans-serif;
-    background-color: #061826;
+    /* background-color: #061826; */
     color: #157141;
     margin: 0;
     padding: 0;
+    background-image: url('travel.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -164,3 +168,40 @@ input {
     margin: auto;
     margin-left: 14rem;
 }
+
+/* travel.js  */
+.calc-travel, .calc-elec, .calc-calo{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 3rem;
+    margin-left: 20rem;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+    border-radius: 2rem;
+    opacity: 0.9;
+}
+
+.calc-travel h1{
+    font-weight: 600;
+    margin-left: 2rem;
+    padding: 10px;
+    color: #fff;
+}
+
+#calc{
+    margin-left: 1rem;
+    justify-content: center;
+}
+
+.calc-calo h1{
+    margin-left: 1rem;
+    color: #fff;
+}
+
+
+
+
+
