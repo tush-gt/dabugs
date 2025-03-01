@@ -26,7 +26,14 @@ function Electricity() {
             <label htmlFor="elec">Enter your electricity bill: </label>
             <input id="elec" type="number" placeholder="Electricity Bill ($)" onChange={handleInput} />
             <button id="calc" onClick={calculateElectricity}>Calculate</button>
-            <button onClick={() => navigate("/calories", { state: location.state })}>Next</button>
+            <button 
+                onClick={() => 
+                {
+                    navigate("/calories", { state: { ...location.state, electricity: bill / 8 } })
+                }
+                }>
+                Next
+            </button>
         </div>
     );
 }

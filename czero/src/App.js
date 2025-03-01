@@ -8,6 +8,7 @@ import Signup from "./components/Signup/Signup";
 import Travel from "./components/Travel";
 import Electricity from "./components/Electricity";
 import Calories from "./components/Calories";
+import Profile from "./components/profile/Profile";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
         <Route path="/calculate" element={<Calculator />} />
         <Route path="/travel" element={<Travel />} />
         <Route path="/electricity" element={<Electricity />} />
+        <Route path="/calories" element={<Calories />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );
