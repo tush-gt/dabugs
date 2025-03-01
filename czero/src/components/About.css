@@ -108,6 +108,7 @@
     background-size: cover;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
 }
 
 /* Card backgrounds - each with a different image */

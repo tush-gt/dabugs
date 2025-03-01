@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Calculator.css";
 import Calculator from "./Calculator";
 
 export function Travel() {
-    let total =0;
+    let [total, setTotal] = useState(0);
     const [data, setData] = useState({ car: 0, bus: 0, train: 0 });
     const navigate = useNavigate()
+    const location = useLocation();
+    const setTravel = location.state?.setTravel || (() => {});
 
     function handleInput(event) {
         let { name, value } = event.target;
@@ -14,8 +16,11 @@ export function Travel() {
     }
 
     function calculateTravel() {
-        total = data.car + data.bus + data.train;
-        alert(`Total travel distance: ${total} km`);
+        let finalTravel = data.car + data.bus + data.train;
+        setTotal(finalTravel); // Updates state asynchronously
+        setTravel(finalTravel); // Pass value to Calculator.js immediately
+    
+        alert(`Total travel distance: ${finalTravel} km`); // Use finalTravel instead of total
     }
 
     return (
@@ -31,7 +36,7 @@ export function Travel() {
             <input id="train"  type="number" name="train" placeholder="Train (km)" onChange={handleInput} />
 
             <button id="calc" onClick={calculateTravel}>Calculate</button>
-            <a  id="calc" href="/electricity">Next</a>
+            <button onClick={() => navigate("/electricity", { state: location.state })}>Next</button>
         </div>
     );
 }

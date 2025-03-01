@@ -3,8 +3,8 @@ import "./team.css"
 
 function Developer()
 {
-    return <div className="team-body">
-    <div className="team-header">
+    return <div className="team-body-dev">
+    <div className="team-header-dev">
         <h1>Meet Our Developers</h1>
         <p>A team of passionate developers from Don Bosco Institute of Technology committed to creating sustainable solutions.</p>
     </div>

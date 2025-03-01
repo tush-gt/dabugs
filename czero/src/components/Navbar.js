@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-
+import Home from "./Home";
+import Profile from "./profile/Profile";
+import Developer from "./Developer";
+import Calculator from "./Calculator";
 function Navbar() {
     function closeSidebar() {
         document.getElementById("check").checked = false;
@@ -44,7 +47,7 @@ function Navbar() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/developers" onClick={closeSidebar}>
+                            <Link to="/developer" onClick={closeSidebar}>
                                 <i className="fa-solid fa-d"></i> Developers
                             </Link>
                         </li>

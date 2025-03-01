@@ -1,10 +1,13 @@
 import "./Calculator.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
+import Calories from "./Calories";
 
 function Electricity() {
     const [bill, setBill] = useState(0);
-        const navigate = useNavigate()
+    const navigate = useNavigate()
+    const location = useLocation();
+    const setElectricity = location.state?.setElectricity || (() => {});
 
     function handleInput(event) {
         setBill(Number(event.target.value));
@@ -12,6 +15,7 @@ function Electricity() {
 
     function calculateElectricity() {
         let consumption = bill / 8;
+        setElectricity(consumption);
         alert(`Electricity consumption: ${consumption.toFixed(2)} kWh`);
         
     }
@@ -22,7 +26,7 @@ function Electricity() {
             <label htmlFor="elec">Enter your electricity bill: </label>
             <input id="elec" type="number" placeholder="Electricity Bill ($)" onChange={handleInput} />
             <button id="calc" onClick={calculateElectricity}>Calculate</button>
-            <a  id="calc" href="/calculator">Calculator</a>
+            <button onClick={() => navigate("/calories", { state: location.state })}>Next</button>
         </div>
     );
 }
