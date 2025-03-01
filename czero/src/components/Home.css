@@ -20,8 +20,9 @@ header {
     border-radius: 2rem;
     display: flex;
     flex-wrap: wrap;
-    height: 20rem;
-    width: 15rem;
+    margin-left: 13rem;
+    height: 50rem;
+    width: 50rem;
 }
 
 footer {

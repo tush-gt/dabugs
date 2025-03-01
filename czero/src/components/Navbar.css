@@ -136,3 +136,7 @@
 #check:checked ~ .sidebar_menu .btn_two i{
     opacity: 1;
 }
+
+.sidebar_menu .home li a:active {
+    left: -350px;
+}
