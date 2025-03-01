@@ -9,9 +9,7 @@ import Calculator from "./components/Calculator";
 function App() {
     return (
         <div>
-          <Navbar/>
-        <Home/>
-        <Calculator/>
+        <Navbar/>
         </div>
     );
 }

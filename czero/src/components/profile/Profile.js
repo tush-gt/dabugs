@@ -27,6 +27,7 @@ const Profile = () => {
                 setUserData(userSnap.data());
             } else {
                 console.log("No user data found!");
+
             }
         } catch (error) {
             console.error("Error fetching profile:", error);
@@ -40,7 +41,10 @@ const Profile = () => {
             const q = query(historyRef, orderBy("timestamp", "desc"), limit(5));
             const snapshot = await getDocs(q);
             const historyData = snapshot.docs.map(doc => doc.data());
+
             setHistory(historyData); // ✅ Now history is set properly
+
+            setHistory(historyData);
         } catch (error) {
             console.error("Error fetching history:", error);
         }
@@ -87,6 +91,7 @@ const Profile = () => {
                     <p>This is the history section where relevant content will be displayed.</p>
                 </div>
             </div>
+
     );
 };
 
