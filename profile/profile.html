@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Profile Page</title>
     <link rel="stylesheet" href="profile.css">
+
 </head>
 <body>
     <!-- Sidebar Toggle Button (Mobile) -->
@@ -13,6 +15,19 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
+        <div class="profile-section">
+            <img src="./profile.jpg" alt="Profile Photo" class="profile-photo">
+            <div class="profile-name">John Doe</div>
+        </div>
+
+        <!-- History Section -->
+        <div class="history">
+            <h4>History</h4>
+            <div id="history-list">
+                <p>Loading history...</p>
+            </div>
+        </div>
+
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#history">History</a></li>
@@ -49,5 +64,6 @@
             <p>This is the history section where relevant content will be displayed.</p>
         </div>
     </div>
+
 </body>
 </html>

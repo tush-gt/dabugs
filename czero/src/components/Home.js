@@ -3,25 +3,19 @@ import "./Home.css"
 function Home()
 {
     return <>
-    <div class="navbar">
-        <div class="left-nav">
-            <img src="logo.png" alt="logo" />
+    <div className="body">
+       <header>
+        <div className="title-box">
             <h1>CarbonZero</h1>
+            <h4>Quantify. Reduce. Sustain</h4>
         </div>
-        <div class="right-nav">
-            <a href="#">Home</a>
-            <a href="#">Calculator</a>
-            <a href="#">Reports</a>
-            <a href="#">My Profile</a>
-        </div>
+        </header>
+        <div id="photo"></div>
+        <footer>
+            <p>&copy; 2025 CarbonZero. All rights reserved.</p>
+        </footer> 
     </div>
-    <header>
-        <h1>Welcome to CarbonZero</h1>
-        <p>Your journey towards a sustainable future starts here.</p>
-    </header>
-    <footer>
-        <p>&copy; 2023 CarbonZero. All rights reserved.</p>
-    </footer>
+    
     </>
 }
 

@@ -1,54 +1,27 @@
-body {
+.body {
     font-family: "Saira Stencil One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    margin: 0;
-    padding: 0;
+    margin: none;
+    padding: none;
+    /* background-image: url('bg.png'); */
 }
-
-.navbar {
-    background-color: #061826;
-    padding: 8px;
-    /* text-align: center; */
-    display: flex;
-    justify-content: space-between;
-}
-
-.left-nav{
-    display: flex;
-    color: white;
-    padding: 8px;
-}
-
-.right-nav{
-    display: flex;
-    justify-content: space-around   ;
-}
-
-.right-nav a{
-    text-decoration: none;
-    padding: 30px 8px;
-    color: white;
-}
-
-.left-nav h1{
-    padding: 0px 8px;
-}
-
-.navbar img {
-    max-width: 100px;
-}
-
-img{
-    height: 50px;
-    width: 50px;
-}
-
 header {
-    background-color: #157145;
+    /* background-color: #157145; */
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+.cards {
+    background-color: grey;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    height: 20rem;
+    width: 15rem;
 }
 
 footer {
@@ -56,7 +29,10 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: bottom;
     bottom: 0;
     width: 100%;
+}
+#photo{
+    background-image: url(./bg.png);
 }
