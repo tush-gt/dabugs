@@ -9,6 +9,7 @@
     background-attachment: fixed; 
     color: #fff;
     box-sizing: border-box; 
+    width: 100vw;
 }
 
 /* Navbar and header styling */
@@ -92,11 +93,11 @@
 
 /* Individual card styling */
 .cards {
-    width: 520px;
-    height: 450px;
+    width: 540px;
+    height: 550px;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1524055988636-436cfa46e59e?ixlib=rb-4.0.1&auto=format&fit=crop&w=1500&q=80');
     border-radius: 20px;
-    padding: 25px;
+    /* padding: 25px; */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
@@ -174,7 +175,7 @@
     color: #f1f1f1;
     line-height: 1.8;
     text-align: justify;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -189,6 +190,7 @@
     position: relative;
     z-index: 1;
     height: 100%;
+    width: 450px;
     display: flex;
     flex-direction: column;
 }
