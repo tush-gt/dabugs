@@ -5,7 +5,7 @@ function Home()
     return <>
     <div className="body">
        <header>
-        <div class="title-box">
+        <div className="title-box">
             <h1>CarbonZero</h1>
             <h4>Quantify. Reduce. Sustain</h4>
         </div>

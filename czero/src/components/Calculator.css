@@ -3,16 +3,29 @@ body {
     margin: 0;
     padding: 0;
     background-color: #061826;
-    color: #A7E22E;
+    color: #fff;
     text-align: center;
 }
 
 .container {
-    max-width: 600px;
     margin: 50px auto;
     background: #061826;
     padding: 20px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 8rem;
+}
+
+#calc1, #calc2, #calc3{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    width: 80%;
+    background-color: black;
+    margin: 0.5rem;
+    border-radius: 2rem;
 }
 
 label, input {
