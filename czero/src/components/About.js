@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './About.css';
 import Navbar from './Navbar';
 
+function About(){
+    return <h1>About us</h1>;
+}
+
 
 // const About = () => {
 //   return (
@@ -63,4 +67,4 @@ import Navbar from './Navbar';
 
 
 
-// export default About;
+ export default About;

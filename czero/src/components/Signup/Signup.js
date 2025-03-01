@@ -54,6 +54,7 @@ function Signup() {
   
 
   return (
+    <div className="main-su">
     <div className="boxbox-su">
       <div className="form-box-su">
         <div className="register-container">
@@ -109,6 +110,7 @@ function Signup() {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 }
