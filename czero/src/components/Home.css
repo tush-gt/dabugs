@@ -6,8 +6,6 @@
     padding: none;
     /* background-image: url('bg.png'); */
 }
-
-
 header {
     /* background-color: #157145; */
     color: white;
@@ -34,4 +32,7 @@ footer {
     position: bottom;
     bottom: 0;
     width: 100%;
+}
+#photo{
+    background-image: url(./bg.png);
 }
