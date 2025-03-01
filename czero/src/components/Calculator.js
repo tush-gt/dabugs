@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./Calculator.css";
 
 function Calculator() {
@@ -44,17 +45,17 @@ function Calculator() {
             </div>
             <br/> <br/>
             </div>
-            <div className="cards">
-                <div className="card" onClick={() => navigate("/travel")}> 
+            <div className="calc-cards">
+                <div className="calc-card" onClick={() => window.location.href = "/Travel"}> 
                     <h2>Travel</h2>
                     <p>The distance you travelled, via different transport, contributes to Global warming more than you think! Find out!</p>
                 </div>
-                <div className="card" onClick={() => navigate("/electricity")}>
+                <div className="calc-card" onClick={() => navigate("/electricity")}>
                     <h2>Electricity</h2>
                     <p>Save electricity, save money! Probably add, “Save Earth” to that!
                     Know how your energy consumption affects the earth!</p>
                 </div>
-                <div className="card" onClick={() => navigate("/calories")}>
+                <div className="calc-card" onClick={() => navigate("/calories")}>
                     <h2>Calorie</h2>
                     <p>The food we eat keeps a trace in our carbon footprint. Get your weekly stats now!</p>
                 </div>

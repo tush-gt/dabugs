@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
 export function Travel() {
-    const [data, setData] = useState({ car: 0, bus: 0, train: 0 });
+    // const [data, setData] = useState({ car: 0, bus: 0, train: 0 });
 
-    function handleInput(event) {
-        let { name, value } = event.target;
-        setData({ ...data, [name]: Number(value) });
-    }
+    // function handleInput(event) {
+    //     let { name, value } = event.target;
+    //     setData({ ...data, [name]: Number(value) });
+    // }
 
-    function calculateTravel() {
-        let total = data.car + data.bus + data.train;
-        alert(`Total travel distance: ${total} km`);
-    }
+    // function calculateTravel() {
+    //     let total = data.car + data.bus + data.train;
+    //     alert(`Total travel distance: ${total} km`);
+    // }
 
     return (
         <div>
@@ -65,3 +65,5 @@ export function Calories() {
         </div>
     );
 }
+
+export default Travel
