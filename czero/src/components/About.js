@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './About.css';
+import Navbar from './Navbar';
 
 const About = () => {
   return (

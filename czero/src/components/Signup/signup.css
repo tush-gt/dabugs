@@ -1,18 +1,42 @@
-/* Center the form */
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: url('./backgroundlogin.jpeg') no-repeat center center/cover;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Glassmorphism effect */
-.form-box {
-    background: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+html, body {
+    height: 100%;
+     /* Ensure the body takes full height */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('./backgroundlogin.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.boxbox-su{
+        position: fixed;  /* Fixes the box relative to the viewport */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centers it perfectly */
+        width: 500px;  
+        height: 1000px;  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7); /* Example background */
+        color: white;  
+        border-radius: 10px;
+        padding: 20px;
+      }
+      
+
+.form-box-su{
+    background: rgba(0, 0, 0, 0.6); 
     border-radius: 20px;
     padding: 30px;
-    width: 400px;
+    width: 400px; /* Fixed width for the form */
     text-align: center;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -26,15 +50,20 @@ header {
 }
 
 /* Top toggle (login/signup switch) */
-.top {
+.top-su {
     color: white;
     margin-bottom: 10px;
 }
 
-.top a {
+.top-su a {
     color: #f5ba13;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.top-su a:hover {
+    text-decoration: underline;
 }
 
 /* Input fields */
@@ -67,8 +96,14 @@ header {
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* Two forms (firstname and lastname) */
+.two-forms {
+    display: flex;
+    gap: 10px;
+}
+
 /* Register button */
-.submit {
+.submit-su{
     width: 100%;
     padding: 12px;
     border: none;
@@ -81,6 +116,11 @@ header {
     transition: 0.3s;
 }
 
-.submit:hover {
+.submit-su:hover {
     background: rgba(255, 255, 255, 0.5);
+}
+.register-su{
+    position:fixed;
+    right:135%;
+    width: 350px;
 }

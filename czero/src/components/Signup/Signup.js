@@ -54,11 +54,11 @@ function Signup() {
   
 
   return (
-    <div className="wrapper">
-      <div className="form-box">
+    <div className="boxbox-su">
+      <div className="form-box-su">
         <div className="register-container">
           {/* 🔹 Toggle Between Login & Signup */}
-          <div className="top">
+          <div className="top-su">
             {isLogin ? (
               <>
                 <span>Don't have an account? </span>
@@ -80,11 +80,11 @@ function Signup() {
             {!isLogin && (
               <div className="two-forms">
                 <div className="input-box">
-                  <i><FaUser /></i>
+                  <i><FaUser/></i>
                   <input type="text" name="firstName" placeholder="Firstname" value={data.firstName} onChange={handleChange} required />
                 </div>
                 <div className="input-box">
-                  <i><FaUser /></i>
+                  <i><FaUser/></i>
                   <input type="text" name="lastName" placeholder="Lastname" value={data.lastName} onChange={handleChange} required />
                 </div>
               </div>
@@ -98,11 +98,14 @@ function Signup() {
             <div className="input-box">
               <i><FaLock /></i>
               <input type="password" name="password" placeholder="Password" value={data.password} onChange={handleChange} required />
+              
             </div>
-
-            <button type="submit" className="submit">
+            <div className="register-su"><button type="submit" className="submit-su">
               {isLogin ? "Login" : "Register"}
-            </button>
+              </button></div>
+
+            
+            
           </form>
         </div>
       </div>
