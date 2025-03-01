@@ -26,6 +26,7 @@
     background-color: #157145;
     box-shadow: 0 0 6px rgba(255,255,255,0.5);
     transition: all 0.3s linear;
+    z-index: 1000
 }
 
 .sidebar_menu .logo{

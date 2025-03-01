@@ -31,14 +31,28 @@ function Calculator() {
     return (
         <div className="calculator-container">
             <h1>Calculator</h1>
+            <div className="content">
+            <div class="carbon-footprint">
+                <p>Calculating your carbon footprint helps you understand your environmental impact and take steps to reduce it. By tracking your emissions, you can make informed decisions to lead a more sustainable lifestyle.</p>
+                <ul>
+                    <li><a href="https://www.who.int/news-room/fact-sheets/detail/climate-change-and-health" target="_blank">Identify areas to reduce emissions</a></li>
+                    <li><a href="https://www.who.int/health-topics/air-pollution" target="_blank">Save money on energy and fuel costs</a></li>
+                    <li><a href="https://www.who.int/initiatives/healthy-environments-for-healthier-populations" target="_blank">Promote sustainable living habits</a></li>
+                    <li><a href="https://www.who.int/health-topics/climate-change" target="_blank">Contribute to a healthier planet</a></li>
+                    <li><a href="https://www.who.int/health-topics/environmental-health" target="_blank">Encourage eco-friendly choices</a></li>
+                </ul>
+            </div>
+            <br/> <br/>
+            </div>
             <div className="cards">
                 <div className="card" onClick={() => navigate("/travel")}> 
                     <h2>Travel</h2>
-                    <p>The distance you travelled contributes to your carbon footprint. Find out more!</p>
+                    <p>The distance you travelled, via different transport, contributes to Global warming more than you think! Find out!</p>
                 </div>
                 <div className="card" onClick={() => navigate("/electricity")}>
                     <h2>Electricity</h2>
-                    <p>Save electricity, save money! Find out how your energy consumption affects the earth.</p>
+                    <p>Save electricity, save money! Probably add, “Save Earth” to that!
+                    Know how your energy consumption affects the earth!</p>
                 </div>
                 <div className="card" onClick={() => navigate("/calories")}>
                     <h2>Calorie</h2>
