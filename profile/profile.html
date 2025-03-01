@@ -4,28 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-   <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
 <body>
+    <!-- Sidebar Toggle Button (Mobile) -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-label">☰ Menu</label>
 
     <!-- Sidebar -->
     <div class="sidebar">
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="#history">History</a></li>
             <li><a href="#">Logout</a></li>
         </ul>
     </div>
 
     <!-- Main Content -->
     <div class="main-content">
-        <img src="https://via.placeholder.com/100" alt="Profile Photo" class="profile-photo">
+        <img src="xavi.png" alt="Profile Photo" class="profile-photo">
         <div class="profile-info">
             <h2>John Doe</h2>
             <p>Web Developer | Designer</p>
         </div>
-    </div>
 
+        <!-- Small Info Boxes -->
+        <div class="info-box-container">
+            <div class="info-box">
+                <h3> change username</h3>
+            
+            </div>
+            <div class="info-box">
+                <h3>Change phone no.</h3>
+            
+            </div>
+            <div class="info-box">
+                <h3>Change yourself</h3>
+        
+            </div>
+        </div>
+
+        <div id="history" style="margin-top: 50px; padding: 20px; background: #f0f0f0; border-radius: 10px; text-align: center;">
+            <h2>History Section</h2>
+            <p>This is the history section where relevant content will be displayed.</p>
+        </div>
+    </div>
 </body>
 </html>
