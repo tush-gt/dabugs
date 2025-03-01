@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page with Firebase History</title>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="./profile.css">
+
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+
 </head>
 <body>
+    <!-- Sidebar Toggle Button (Mobile) -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-label">☰ Menu</label>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -27,58 +30,40 @@
 
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="#history">History</a></li>
             <li><a href="#">Logout</a></li>
         </ul>
     </div>
 
     <!-- Main Content -->
     <div class="main-content">
-        <h2>Welcome to Your Dashboard</h2>
-        <p>This is where your content will go.</p>
+        <img src="xavi.png" alt="Profile Photo" class="profile-photo">
+        <div class="profile-info">
+            <h2>John Doe</h2>
+            <p>Web Developer | Designer</p>
+        </div>
+
+        <!-- Small Info Boxes -->
+        <div class="info-box-container">
+            <div class="info-box">
+                <h3> change username</h3>
+            
+            </div>
+            <div class="info-box">
+                <h3>Change phone no.</h3>
+            
+            </div>
+            <div class="info-box">
+                <h3>Change yourself</h3>
+        
+            </div>
+        </div>
+
+        <div id="history" style="margin-top: 50px; padding: 20px; background: #f0f0f0; border-radius: 10px; text-align: center;">
+            <h2>History Section</h2>
+            <p>This is the history section where relevant content will be displayed.</p>
+        </div>
     </div>
-
-    <script>
-        // Firebase Configuration
-        const firebaseConfig = {
-            apiKey: "your-api-key",
-            authDomain: "your-auth-domain",
-            projectId: "your-project-id",
-            storageBucket: "your-storage-bucket",
-            messagingSenderId: "your-messaging-sender-id",
-            appId: "your-app-id"
-        };
-
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-
-        // Fetch History from Firestore
-        function fetchHistory() {
-            const historyList = document.getElementById("history-list");
-            historyList.innerHTML = "<p>Loading history...</p>";
-
-            db.collection("history").orderBy("timestamp", "desc").limit(5).get()
-                .then((querySnapshot) => {
-                    historyList.innerHTML = ""; // Clear loading text
-                    querySnapshot.forEach((doc) => {
-                        const data = doc.data();
-                        const historyItem = document.createElement("div");
-                        historyItem.classList.add("history-item");
-                        historyItem.textContent = data.activity;
-                        historyList.appendChild(historyItem);
-                    });
-                })
-                .catch((error) => {
-                    console.error("Error fetching history:", error);
-                    historyList.innerHTML = "<p>Error loading history.</p>";
-                });
-        }
-
-        // Load history on page load
-        fetchHistory();
-    </script>
 
 </body>
 </html>
