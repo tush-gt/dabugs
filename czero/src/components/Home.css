@@ -1,48 +1,12 @@
-body {
+.body {
     font-family: "Saira Stencil One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    margin: 0;
-    padding: 0;
+    margin: none;
+    padding: none;
+    background-image: url('bg.png') contain no-repeat;
 }
 
-.navbar {
-    background-color: #061826;
-    padding: 8px;
-    /* text-align: center; */
-    display: flex;
-    justify-content: space-between;
-}
-
-.left-nav{
-    display: flex;
-    color: white;
-    padding: 8px;
-}
-
-.right-nav{
-    display: flex;
-    justify-content: space-around   ;
-}
-
-.right-nav a{
-    text-decoration: none;
-    padding: 30px 8px;
-    color: white;
-}
-
-.left-nav h1{
-    padding: 0px 8px;
-}
-
-.navbar img {
-    max-width: 100px;
-}
-
-img{
-    height: 50px;
-    width: 50px;
-}
 
 header {
     background-color: #157145;
