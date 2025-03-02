@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Calculator.css";
 
 function Calculator() {
@@ -8,7 +8,6 @@ function Calculator() {
     const [caloriesData, setCaloriesData] = useState(0);
     const [totalFootprint, setTotalFootprint] = useState(0);
     const navigate = useNavigate();
-    const location = useLocation();
     const [data, setData] = useState({
         car: 0,
         bus: 0,
@@ -16,30 +15,43 @@ function Calculator() {
         bill: 0,
         cal: 0,
     });
+    const [showResults, setShowResults] = useState(false);
 
     function handleInput(event) {
         let { name, value } = event.target;
         setData({ ...data, [name]: Number(value) });
     }
 
+    function calculateFootprint() {
+        // Compute values directly from `data` instead of waiting for state updates
+        let travelFootprint = (data.car + data.bus + data.train) * 0.25;
+        let electricityFootprint = data.bill * 0.5;
+        let calorieFootprint = data.cal * 0.0025;
+        let total = travelFootprint + electricityFootprint + calorieFootprint;
     
-
+        // Log values to console
+        console.log("Travel Data:", (data.car + data.bus + data.train));
+        console.log("Electricity Data:", data.bill);
+        console.log("Calorie Data:", data.cal);
+        console.log("Travel Footprint:", travelFootprint);
+        console.log("Electricity Footprint:", electricityFootprint);
+        console.log("Calorie Footprint:", calorieFootprint);
+        console.log("Total Carbon Footprint:", total);
+    
+        // Update state after calculating
+        setTravelData(data.car + data.bus + data.train);
+        setElectricityData(data.bill);
+        setCaloriesData(data.cal);
+        setTotalFootprint(total);
+    
+        // Show alert with total footprint value
+        alert(`Your total carbon footprint is: ${total.toFixed(2)} kg CO2`);
+        setShowResults(true); // Ensure results are shown
+    }
+    
     return (
         <div className="calculator-container">
             <h1>Calculator</h1>
-            <div className="content">
-                <div className="carbon-footprint">
-                    <p>Calculating your carbon footprint helps you understand your environmental impact and take steps to reduce it.</p>
-                    <ul>
-                        <li><a href="https://www.who.int/news-room/fact-sheets/detail/climate-change-and-health" target="_blank" rel="noopener noreferrer">Identify areas to reduce emissions</a></li>
-                        <li><a href="https://www.who.int/health-topics/air-pollution" target="_blank" rel="noopener noreferrer">Save money on energy and fuel costs</a></li>
-                        <li><a href="https://www.who.int/initiatives/healthy-environments-for-healthier-populations" target="_blank" rel="noopener noreferrer">Promote sustainable living habits</a></li>
-                        <li><a href="https://www.who.int/health-topics/climate-change" target="_blank" rel="noopener noreferrer">Contribute to a healthier planet</a></li>
-                        <li><a href="https://www.who.int/health-topics/environmental-health" target="_blank" rel="noopener noreferrer">Encourage eco-friendly choices</a></li>
-                    </ul>
-                </div>
-            </div>
-
             <div className="calc-cards">
                 <div className="calc-card"> 
                     <h2>Travel</h2>
@@ -58,11 +70,16 @@ function Calculator() {
                 </div>
             </div>
 
-            
-
-            <footer>
-                <p>&copy; 2025 CarbonZero. All rights reserved.</p>
-            </footer> 
+            {showResults && (
+                <div className="results">
+                    <h2>Your Carbon Footprint Data</h2>
+                    <p>Travel: {travelData} km</p>
+                    <p>Electricity Bill: ${electricityData * 8}</p>
+                    <p>Electricity Consumption: {electricityData.toFixed(2)} kWh</p>
+                    <p>Calorie Intake: {caloriesData} kcal/month</p>
+                    <h3>Total Carbon Footprint: {totalFootprint.toFixed(2)} kg CO2</h3>
+                </div>
+            )}
         </div>
     );
 }

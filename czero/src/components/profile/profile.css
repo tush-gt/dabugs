@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Amatic SC", sans-serif;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 body {
@@ -36,7 +36,7 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 3px solid white;;
+    border: 3px solid white;
 }
 
 .profile-photo-container i{
@@ -51,7 +51,10 @@ body {
 .history {
     margin-top: 20px;
     padding: 10px;
-    text-align: left;
+    text-align: center;
+    background-color: #34495e;
+    color: #061826; 
+    margin-left: 15rem;
 }
 
 .history-item {
@@ -80,14 +83,14 @@ body {
 .sidebar ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 25px;
     padding: 10px 20px;
     border-radius: 5px;
     display: block;
     transition: background 0.3s, transform 0.2s;
 }
 .sidebar ul li a:hover {
-    background: #ffcc00;
+    background: #34495e;
     color: #222;
     transform: translateX(5px);
 }

@@ -81,6 +81,8 @@ button {
     margin-bottom: 3rem;
     height: 5rem;
     width: 13rem;
+    transform: translateX(-250px);
+    
 }
 
 button:hover {

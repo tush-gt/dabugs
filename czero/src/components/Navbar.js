@@ -4,10 +4,25 @@ import Home from "./Home";
 import Profile from "./profile/Profile";
 import Developer from "./Developer";
 import Calculator from "./Calculator";
+import { useState, useEffect } from "react";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+
+
 function Navbar() {
+    const [user, setUser] = useState(null);
     function closeSidebar() {
         document.getElementById("check").checked = false;
     }
+
+    useEffect(()=>
+    {
+        const auth = getAuth();
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser)
+
+        });
+        return ()=> unsubscribe();
+    });
 
     return (
         <div className="main_box">
@@ -37,13 +52,13 @@ function Navbar() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/signup" onClick={closeSidebar}>
-                                <i className="fa-solid fa-calculator"></i> Signup
+                            <Link to={user ? "/profile" : "/signup"} onClick={closeSidebar}>
+                                <i className="fa-solid fa-calculator"></i> {user ? "Profile" : "Signup"}
                             </Link>
                         </li>
                         <li>
-                            <Link to="/profile" onClick={closeSidebar}>
-                                <i className="fa-solid fa-circle-user"></i> My Profile
+                            <Link to="/about" onClick={closeSidebar}>
+                                <i className="fa-solid fa-circle-user"></i> About
                             </Link>
                         </li>
                         <li>
