@@ -9,6 +9,7 @@ import Travel from "./components/Travel";
 import Electricity from "./components/Electricity";
 import Calories from "./components/Calories";
 import Profile from "./components/profile/Profile";
+import Developer from "./components/Developer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/calories" element={<Calories />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/developer" element={<Developer />} />
       </Routes>
     </Router>
   );

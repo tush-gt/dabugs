@@ -37,8 +37,8 @@ function Navbar() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/calculator" onClick={closeSidebar}>
-                                <i className="fa-solid fa-calculator"></i> Calculator
+                            <Link to="/signup" onClick={closeSidebar}>
+                                <i className="fa-solid fa-calculator"></i> Signup
                             </Link>
                         </li>
                         <li>

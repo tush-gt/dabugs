@@ -13,7 +13,7 @@ function Developer()
         <div className="team-card">
             <div className="team-card-inner">
                 <div className="team-photo">
-                    <img src="./photo/WhatsApp Image 2025-03-01 at 19.59.12_0f0ee8dd.jpg" alt="Developer 1"/>
+                    <img src="./apurva.jpg" alt="Developer 1"/>
                 </div>
                 <div className="team-info">
                     <h2>Apurva Kohad</h2>

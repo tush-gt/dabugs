@@ -69,11 +69,9 @@ const Profile = () => {
     <div className="profile-info">
         {/* Profile Photo */}
         <div className="profile-photo-container">
-            <img 
-                src="./profile.jpg" 
-                
-                className="profile-photo"
-            />
+            
+                <i class="fa-solid fa-user"></i>
+            
         </div>
 
         {/* Username */}

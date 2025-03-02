@@ -32,11 +32,15 @@ body {
     padding: 20px;
 }
 
-.profile-photo {
+.profile-photo-container {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 3px solid white;
+    border: 3px solid white;;
+}
+
+.profile-photo-container i{
+    font-size: 280px;
 }
 
 .profile-name {
